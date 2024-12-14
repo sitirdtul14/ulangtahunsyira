@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun, Teman!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #ff6347;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #555;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #ff6347;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 1em;
+            color: #777;
+        }
+        .footer a {
+            color: #ff6347;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        /* Menambahkan CSS untuk mengecilkan gambar */
+        .birthday-image {
+            width: 50%;
+            height: auto;
+            max-width: 500px;
+            margin-bottom: 20px;
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ffd700;
+            animation: fall 5s infinite;
+            opacity: 0.7;
+        }
+        .cake {
+            position: fixed;
+            bottom: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            transition: bottom 1s ease-in-out;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(-100vh) translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Gambar Ulang Tahun -->
+        <img src="imgs/foto syira.jpg" alt="Foto Ucapan Ulang Tahun untuk Syira" class="birthday-image">
+        
+        <!-- Teks Ucapan -->
+        <h1>Selamat Ulang Tahun, Syira Putri Aulia!</h1>
+        <p>
+            Di hari yang spesial ini, aku ingin mengucapkan <span class="highlight">selamat ulang tahun</span> untukmu! 🎉
+            Semoga setiap momen dalam hidupmu penuh dengan kebahagiaan dan cinta. Aku sangat bersyukur bisa memiliki teman sepertimu yang selalu ada
+            di setiap suka dan duka. Tahun demi tahun, kita sudah melewati banyak kenangan indah bersama, dan aku yakin kita akan terus menciptakan
+            banyak kenangan yang lebih seru lagi di masa depan.
+        </p>
+        <p>
+            Pada hari ulang tahunmu ini, aku ingin berdoa agar kamu selalu diberi kesehatan, keberuntungan, dan kebahagiaan yang melimpah. 
+            Semoga semua impianmu yang belum tercapai dapat segera terwujud, dan semoga kamu selalu diberikan kekuatan untuk menghadapi setiap tantangan 
+            yang datang. Ingatlah selalu bahwa di dunia ini, kamu sangat berarti untuk banyak orang, termasuk aku. 💖
+        </p>
+        <p>
+            Tak hanya hari ini, tapi setiap hari, aku berharap kamu selalu merasa dicintai dan dihargai. Teruslah menjadi pribadi yang luar biasa
+            seperti yang selalu aku kagumi. Teruslah mengejar impianmu dan jangan pernah ragu untuk melangkah maju. Aku yakin, kamu bisa mencapai
+            segala sesuatu yang kamu inginkan.
+        </p>
+        <p>
+            Terimakasih karena selalu ada, selalu mendukung, dan selalu membuat hidupku lebih berwarna. Jangan pernah berubah, karena kamu sudah
+            menjadi versi terbaik dari dirimu sendiri. Dan untuk hari ini, nikmati setiap detik dari perjalanan baru di usia barumu! 🎂🎁
+        </p>
+        <p>
+            Sekali lagi, selamat ulang tahun, temanku! Semoga tahun yang baru ini membawa sejuta kebahagiaan, kejutan manis, dan keberhasilan yang
+            tak terhitung. Aku berharap kita bisa terus berbagi banyak momen bahagia bersama. Enjoy your day, enjoy your life! 🌟
+        </p>
+        <button onclick="showSurprise()">Klik untuk Kejutan</button>
+        <div class="footer">
+            <p>Dengan penuh cinta, <br> Temanmu yang selalu mendukungmu.</p>
+            <p><a href="mailto:teman@example.com">@sitirdtul</a></p>
+        </div>
+    </div>
+    <img src="imgs/cake.png" alt="Kue Ulang Tahun" class="cake" id="birthdayCake">
+    <script>
+        function showSurprise() {
+            for (let i = 0; i < 100; i++) {
+                let confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                document.body.appendChild(confetti);
+
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+            }
+
+            // Munculkan kue ulang tahun
+            const cake = document.getElementById('birthdayCake');
+            cake.style.bottom = '20px';
+
+            setTimeout(() => {
+                alert('Surprise! Selamat menikmati kue ulang tahunnya! 🎂');
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
